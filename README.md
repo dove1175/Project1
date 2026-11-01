@@ -16,3 +16,30 @@ AWS 인프라를 직접 구축하며 네트워크, 서버, 보안 설정을 실�
 - AWS Region: ap-northeast-2 (Seoul)
 - VPC: Default VPC
 - EC2 Instance Name: project1
+
+## Implementation
+
+현재까지 다음 구성을 완료했습니다.
+
+- Default VPC 사용
+- Public Subnet에 EC2 `project1` 배포
+- Security Group 구성
+  - SSH 22: 제한된 소스만 허용
+  - HTTP 80: 웹 접속 허용
+- Amazon Linux 2023 사용
+- Nginx 설치 및 실행
+- EC2 Public IP를 통한 웹 페이지 접속 확인
+
+현재 구성:
+
+```text
+Internet
+   ↓
+Security Group
+   ↓
+EC2 project1
+   ↓
+Nginx
+   ↓
+Static Web Page
+```
