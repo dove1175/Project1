@@ -39,10 +39,19 @@ Security Group
    ↓
 EC2 project1
    ↓
-Nginx
+Nginx :80
    ↓
-Static Web Page
+Gunicorn :8000
+   ↓
+Flask Application
 ```
+
+- Nginx가 외부 HTTP 요청을 수신
+- Gunicorn은 `127.0.0.1:8000`에서 내부적으로 실행
+- Flask가 실제 애플리케이션 요청을 처리
+- Gunicorn은 systemd 서비스로 등록하여 EC2 재부팅 후 자동 실행
+- Gunicorn 프로세스 종료 시 `Restart=always` 설정으로 자동 복구
+- `curl`을 이용해 Gunicorn 직접 요청과 Nginx Reverse Proxy 요청을 각각 확인
 
 ## Monitoring
 
