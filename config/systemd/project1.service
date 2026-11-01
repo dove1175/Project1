@@ -1,0 +1,14 @@
+[Unit]
+Description=Project1 Gunicorn Service
+After=network.target
+
+[Service]
+User=ec2-user
+Group=ec2-user
+WorkingDirectory=/home/ec2-user/project1
+Environment="PATH=/home/ec2-user/project1/.venv/bin"
+ExecStart=/home/ec2-user/project1/.venv/bin/gunicorn --workers 2 --bind 127.0.0.1:8000 app:app
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
