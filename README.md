@@ -43,3 +43,16 @@ Nginx
    ↓
 Static Web Page
 ```
+
+## Monitoring
+
+EC2에서 기본 제공되는 CloudWatch Metrics를 이용해 인스턴스 상태와 기본 트래픽을 확인했습니다.
+
+- CPUUtilization
+- NetworkIn
+- NetworkOut
+- StatusCheckFailed
+
+![CloudWatch Basic Metrics](docs/screenshots/cloudwatch-basic-metrics.png)
+
+현재 프로젝트 규모에서는 별도의 모니터링 스택을 추가하지 않고 CloudWatch 기본 지표로 상태를 확인하도록 구성했습니다.
