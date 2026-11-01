@@ -1,0 +1,18 @@
+# Project1
+
+AWS 인프라를 직접 구축하며 네트워크, 서버, 보안 설정을 실습하고
+아키텍처 의사결정과 트러블슈팅 과정을 기록하는 프로젝트입니다.
+
+## Goal
+
+- AWS EC2 기반 서버 구축
+- Security Group을 통한 접근 제어
+- Nginx 웹 서버 구성
+- CloudWatch 기본 모니터링
+- 아키텍처 설계 및 개선 과정 기록
+
+## Environment
+
+- AWS Region: ap-northeast-2 (Seoul)
+- VPC: Default VPC
+- EC2 Instance Name: project1
